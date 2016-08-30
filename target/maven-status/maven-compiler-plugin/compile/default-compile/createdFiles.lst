@@ -1,0 +1,4 @@
+com\training\repository\ManufacturerRepository.class
+com\training\controllers\ManufacturerAPI.class
+com\training\repository\Manufacturer.class
+com\training\ManufacturerMsApplication.class
