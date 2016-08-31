@@ -4,11 +4,13 @@
 package com.training.repository;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.training.model.Orders;
 
 /**
  * @author admin
@@ -40,6 +42,8 @@ public class Manufacturer {
 	private Date inceptionDate;
 	
 	private Boolean isActive;
+	
+	private List<Orders> allOrders;
 
 	public int getId() {
 		return id;
@@ -77,6 +81,14 @@ public class Manufacturer {
 	public String toString() {
 		return "Manufacturer [id=" + id + ", name=" + name + ", inceptionDate=" + inceptionDate + ", isActive="
 				+ isActive + "]";
+	}
+
+	public List<Orders> getAllOrders() {
+		return allOrders;
+	}
+
+	public void setAllOrders(List<Orders> allOrders) {
+		this.allOrders = allOrders;
 	}
 	
 }

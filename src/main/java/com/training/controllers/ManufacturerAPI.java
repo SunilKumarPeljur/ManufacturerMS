@@ -12,11 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.training.feign.client.OrderClient;
+import com.training.model.Orders;
 import com.training.repository.Manufacturer;
 import com.training.repository.ManufacturerRepository;
 
 @RestController
 public class ManufacturerAPI {
+	
+	@Autowired
+	OrderClient oderClient;
 
 	@Autowired
 	private ManufacturerRepository manufacturerRepo;
@@ -30,6 +35,10 @@ public class ManufacturerAPI {
 	@RequestMapping(value = "/api/manufacturer/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Manufacturer> find(@PathVariable(value = "id") Integer id) {
 		Manufacturer manufacturer = manufacturerRepo.findOne(id);
+		if(manufacturer != null) {
+			List<Orders> orders = oderClient.findAll();
+			manufacturer.setAllOrders(orders);
+		}
 		return new ResponseEntity<Manufacturer>(manufacturer, HttpStatus.OK);
 	}
 
