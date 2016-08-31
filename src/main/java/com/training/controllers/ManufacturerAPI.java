@@ -36,7 +36,7 @@ public class ManufacturerAPI {
 	public ResponseEntity<Manufacturer> find(@PathVariable(value = "id") Integer id) {
 		Manufacturer manufacturer = manufacturerRepo.findOne(id);
 		if(manufacturer != null) {
-			List<Orders> orders = oderClient.findAll();
+			List<Orders> orders = oderClient.findOrdersByManufacturer(id);
 			manufacturer.setAllOrders(orders);
 		}
 		return new ResponseEntity<Manufacturer>(manufacturer, HttpStatus.OK);

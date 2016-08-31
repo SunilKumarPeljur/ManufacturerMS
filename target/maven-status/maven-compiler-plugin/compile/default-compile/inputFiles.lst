@@ -1,4 +1,6 @@
 C:\Users\admin\Documents\workspace-sts-3.8.0.RELEASE\ManufacturerMS\src\main\java\com\training\repository\ManufacturerRepository.java
 C:\Users\admin\Documents\workspace-sts-3.8.0.RELEASE\ManufacturerMS\src\main\java\com\training\ManufacturerMsApplication.java
 C:\Users\admin\Documents\workspace-sts-3.8.0.RELEASE\ManufacturerMS\src\main\java\com\training\repository\Manufacturer.java
+C:\Users\admin\Documents\workspace-sts-3.8.0.RELEASE\ManufacturerMS\src\main\java\com\training\model\Orders.java
 C:\Users\admin\Documents\workspace-sts-3.8.0.RELEASE\ManufacturerMS\src\main\java\com\training\controllers\ManufacturerAPI.java
+C:\Users\admin\Documents\workspace-sts-3.8.0.RELEASE\ManufacturerMS\src\main\java\com\training\feign\client\OrderClient.java
